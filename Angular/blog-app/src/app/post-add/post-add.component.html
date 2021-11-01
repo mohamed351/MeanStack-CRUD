@@ -1,0 +1,24 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="SubmitData()">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" formControlName="title" />
+            <span class="text-danger mt-2" *ngIf="Title.touched && Title.invalid">
+                <span *ngIf="Title.errors.required"> The Title is Required </span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" formControlName="description">
+
+            </textarea>
+            <span class="text-danger mt-2" *ngIf="Description.touched && Description.invalid">
+                <span *ngIf="Title.errors.required"> The Title is Required </span>
+            </span>
+
+        </div>
+        <div class="">
+            <button [disabled]="!this.form.valid" class="btn btn-success mt-2">Send </button>
+        </div>
+    </form>
+</div>
